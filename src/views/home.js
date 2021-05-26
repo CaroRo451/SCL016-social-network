@@ -19,8 +19,8 @@ export const home = () => {
         <img src="img/google-logo.png" class="google">
         <h1 id="login"></h1>
     </section>
-    ` 
-    divHome.innerHTML = viewHome;
+    `;
+  divHome.innerHTML = viewHome;
 
   /* const btn = viewHome.querySelector('entry');
   btn.addEventListener('click', () => {
