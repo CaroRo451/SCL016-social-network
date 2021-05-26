@@ -10,22 +10,8 @@
 </head>
 
 <body>
-  <header>
-    <img class="logo" src="img/logo.png">
-  </header>
-  <nav>
-    <ul></ul>
-    <ul></ul>
-  </nav>
-  <h1>BIENVENIDOS</h1>
-  <section class="login">
-    <input type="email" id="email" placeholder="Ingresa tu correo" />
-    <input type="password" id="password" placeholder="Contraseña" />
-    <button onclick="enter()">Ingresar</button>
-    <button onclick="check()">Regístrate</button>
-    <img src="img/google-logo.png" class="google">
-    <h1 id="login"></h1>
-  </section>
+  <div id="root"></div>
+
 
   <script type="module" src="main.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -37,7 +23,7 @@
 
   <script>
     // Your web app's Firebase configuration
-    var firebaseConfig = {
+    const firebaseConfig = {
       apiKey: "AIzaSyC0b8XiZ4ieUUXvw5ou_i4D0Jsy9ANGTr4",
       authDomain: "social-food-s.firebaseapp.com",
       projectId: "social-food-s",
@@ -48,7 +34,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
-    firebase.auth().onAuthStateChanged((user) => {
+    /*firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
@@ -57,25 +43,10 @@
       } else {
         document.getElementById("login").innerHTML = "Los datos ingresados no son válidos ";
         // User is signed out
-        // ...
       }
     });
 
-    const enter = () => {
-      let email = document.getElementById("email").value;
-      let password = document.getElementById("password").value;
-      //alert("email="+email+"password="+password);//
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          // Signed in
-          var user = userCredential.user;
-          // ...
-        })
-        .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          alert(errorMessage);
-        });
+
 
       /*Registro de usuarios nuevos*/
       const enter = () => {
@@ -96,8 +67,7 @@
             console.log(errorCode);
             console.log(errorMessage);
           });
-    }};
+      }
   </script>
 </body>
-
 </html>
