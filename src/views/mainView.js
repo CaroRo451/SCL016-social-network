@@ -1,7 +1,7 @@
 export const mainView = () => {
   const navProfile = document.createElement('nav');
   const viewProfile = ` 
-        <ul>Logo</ul>
+        <ul>Logo Pagina</ul>
         <ul>Menu Hamb</ul>
    `
   navProfile.innerHTML = viewProfile;
