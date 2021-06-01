@@ -8,7 +8,8 @@ export const loginGoogle = () => {
   return btnGoogle;
 };
 
-/* const btn = viewHome.querySelector('.google');
+/* import { enter } from '../lib/index.js';
+ const btn = viewHome.querySelector('.google');
   btn.addEventListener('click', () => {
     enter();
   }); */
