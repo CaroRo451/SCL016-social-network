@@ -14,17 +14,10 @@ export const home = () => {
         <input type="email" id="email" placeholder="Ingresa tu correo" />
         <input type="password" id="password" placeholder="Contraseña" />
         <button id="entry">Ingresar</button>
-        <button id="check">Regístrate</button>
-
-        <img src="img/google-logo.png" class="google">
-        <h1 id="login"></h1>
+        <button id="check">Regístrate</button>       
     </section>
-    `;
+    `
   divHome.innerHTML = viewHome;
 
-  /* const btn = viewHome.querySelector('entry');
-  btn.addEventListener('click', () => {
-    enter();
-  }); */
   return viewHome;
 };
