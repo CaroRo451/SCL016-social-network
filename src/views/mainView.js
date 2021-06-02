@@ -8,7 +8,8 @@ export const mainView = () => {
   return navProfile;
 };
 
-export const movePost = () => {
+/*
+export const editPost = () => {
   const navPost = document.createElement('nav');
   const viewPost = ` 
           <ul>Like</ul>
@@ -17,4 +18,4 @@ export const movePost = () => {
     `;
   navPost.innerHTML = viewPost;
   return navPost;
-};
+}; */

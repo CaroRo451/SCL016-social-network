@@ -1,4 +1,4 @@
-export const menu = () => {
+/* export const menu = () => {
   const navMenu = document.createElement('nav');
 
   const viewMenu = ` 
@@ -9,4 +9,4 @@ export const menu = () => {
   navMenu.innerHTML = viewMenu;
 
   return navMenu;
-};
+}; */

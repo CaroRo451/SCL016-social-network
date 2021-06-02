@@ -1,6 +1,6 @@
 export const loginGoogle = () => {
   const btnGoogle = document.createElement('div');
-  const imgGoogle = `
+  /* const imgGoogle = `
    <img src="img/google-logo.png" class="google">
         <h1 id="login"></h1>
         `;
@@ -8,7 +8,8 @@ export const loginGoogle = () => {
   return btnGoogle;
 };
 
-/* const btn = viewHome.querySelector('.google');
+/* import { enter } from '../lib/index.js';
+ const btn = viewHome.querySelector('.google');
   btn.addEventListener('click', () => {
     enter();
   }); */

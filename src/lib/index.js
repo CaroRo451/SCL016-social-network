@@ -1,11 +1,9 @@
-// aqui exportaras las funciones que necesites
-
 export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
 };
 
-export const enter = () => {
+// aqui exportaras las funciones que necesites
+
+/* export const entry = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   // alert("email="+email+"password="+password);
@@ -20,4 +18,8 @@ export const enter = () => {
       const errorMessage = error.message;
       alert(errorMessage);
     });
-};
+}; */
+
+/*export const turnHash = (hash) => {
+  location.hash = hash;
+};*/
