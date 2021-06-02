@@ -1,5 +1,5 @@
-import { entry, homeG } from './lib/firebase.js';
-import { turnHash, errorAD } from './lib/index.js';
+// import { entry } from '../lib/firebase.js';
+// import { turnHash } from '../lib/index.js';
 
 export const home = () => {
   const divHome = document.createElement('div');
@@ -14,14 +14,16 @@ export const home = () => {
     <section class="login">
         <input type="email" id="email" placeholder="Ingresa tu correo" />
         <input type="password" id="password" placeholder="Contraseña" />
-        <button id="entry">Ingresar</button>
+        <a href="#/entry"><button class="entryBtn">Ingresar</button></a>
         <button id="check">Regístrate</button>
         <a href="" id="gBtn"><img src="img/google-logo.png"></a>    
     </section>
     `;
   divHome.innerHTML = viewHome;
 
-  divHome.querySelector('#entry').addEventListener('click', () => {
+  return divHome;
+};
+  /* divHome.querySelector('#entry').addEventListener('click', () => {
     const email = divHome.querySelector('#email').value;
     const password = divHome.querySelector('#password').value;
     entry(email, password)
@@ -35,6 +37,6 @@ export const home = () => {
       });
   });
 
-  divHome.querySelector('#gBtn').addEventListener('click', homeG);
+  // divHome.querySelector('#gBtn').addEventListener('click', homeG);
   return divHome;
-};
+}; */

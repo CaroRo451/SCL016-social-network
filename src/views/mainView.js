@@ -8,6 +8,7 @@ export const mainView = () => {
   return navProfile;
 };
 
+/*
 export const editPost = () => {
   const navPost = document.createElement('nav');
   const viewPost = ` 
@@ -17,4 +18,4 @@ export const editPost = () => {
     `;
   navPost.innerHTML = viewPost;
   return navPost;
-};
+}; */

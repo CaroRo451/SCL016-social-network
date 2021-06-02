@@ -1,4 +1,4 @@
-export const account = () => {
+/* export const account = () => {
   const userNew = document.createElement('nav');
   const navUser = `
 
@@ -13,4 +13,4 @@ export const account = () => {
     `
   userNew.innerHTML = navUser;
   return userNew;
-};
+}; */

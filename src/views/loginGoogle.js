@@ -1,6 +1,6 @@
 export const loginGoogle = () => {
   const btnGoogle = document.createElement('div');
-  const imgGoogle = `
+  /* const imgGoogle = `
    <img src="img/google-logo.png" class="google">
         <h1 id="login"></h1>
         `;

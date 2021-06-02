@@ -2,7 +2,7 @@
 export const entry = (email, password) =>
 firebase.auth().signInWithEmailAndPassword(email, password);
 
-// Registro de usuarios nuevos
+/* Registro de usuarios nuevos
 export const homeReg = (email, password) =>
   firebase.auth().createUserWithEmailAndPassword(email, password);
 
@@ -29,4 +29,4 @@ export const signOut = () => {
   }).catch((error) => {
     // An error happened.
   });
-}
+} */
