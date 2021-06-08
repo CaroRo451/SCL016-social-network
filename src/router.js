@@ -1,25 +1,36 @@
-// import { account } from './views/account.js';
-import { myFunction } from './lib/index.js';
 import { home } from './views/home.js';
-// import { loginGoogle } from './views/loginGoogle.js';
+import { account } from './views/account.js';
 import { mainView } from './views/mainView.js';
-// import { turnHash} from './lib/index.js';
-/* import { menu } from './views/menu.js';
-import { newPost } from './views/newPost.js'; */
 
-myFunction();
-document.getElementById('root').innerHTML = home();
-//document.getElementById('root').appendChild(loginGoogle());
-document.getElementById('root').appendChild(mainView());
-/* document.getElementById('root').appendChild(editPost());
-document.getElementById('root').appendChild(menu());
-document.getElementById('root').appendChild(account());
-document.getElementById('root').appendChild(newPost()); */
+const showTemplate = (hash) => {
+  const containerRoot = document.getElementById('root');
 
-/*export const changeView = (hash) => {
-  const root = document.getElementById('root');
-  root.innerHTML = '';
-  if (hash === '#/entry') {
-    root.appendChild(mainView());
+  switch (hash) {
+    case '':
+      containerRoot.innerHTML = '';
+      containerRoot.appendChild(home());
+      break;
+    case '#/':
+      containerRoot.innerHTML = '';
+      containerRoot.appendChild(home());
+      break;
+    case '#/registrate':
+      containerRoot.innerHTML = '';
+      containerRoot.appendChild(account());
+      break;
+    case '#/mainView':
+      containerRoot.innerHTML = '';
+      containerRoot.appendChild(mainView());
+      break;
+    default:
+      containerRoot.innerHTML = '';
+      break;
   }
-}*/
+};
+
+export const changeView = (hash) => {
+  if (hash === '') {
+    return showTemplate(hash);
+  }
+  return showTemplate(hash);
+};

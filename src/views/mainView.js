@@ -1,9 +1,9 @@
 export const mainView = () => {
   const navProfile = document.createElement('nav');
-  const viewProfile = ` 
-          <ul>Logo Pagina</ul>
+  const viewProfile = `
+          <img class="logo" src="img/logo.png">
           <ul>Menu Hamb</ul>
-     `;
+  `;
   navProfile.innerHTML = viewProfile;
   return navProfile;
 };
@@ -11,7 +11,7 @@ export const mainView = () => {
 /*
 export const editPost = () => {
   const navPost = document.createElement('nav');
-  const viewPost = ` 
+  const viewPost = `
           <ul>Like</ul>
           <ul>Editar Post</ul>
           <ul>Eliminar Post</ul>

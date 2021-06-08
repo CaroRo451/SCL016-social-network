@@ -7,8 +7,8 @@ background-repeat: no-repeat;
 .logo {
 display: block;
 margin: auto;
-width: 45vw;
-height: 25vh;
+width: 35vw;
+height: 20vh;
 }
 
 h1{
@@ -29,4 +29,13 @@ cursor: pointer;
 align-self: center;
 width: 20%;
 height: 20%;
+}
+
+.newlogin {
+display: flex;
+margin: auto;
+flex-direction: column;
+text-align-last: center;
+width: 15vw;
+row-gap: 10px;
 }
