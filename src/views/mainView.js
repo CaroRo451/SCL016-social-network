@@ -4,7 +4,7 @@ export const mainView = () => {
           <img class="logo" src="img/logo.png">
           <div class="newPost">
           <textarea id="post" class="post" placeholder="Escribe Tu Receta"></textarea>
-          <button class="postBtn">Publicar</button>
+          <button>Publicar</button>
           </div>
   `;
   navProfile.innerHTML = viewProfile;

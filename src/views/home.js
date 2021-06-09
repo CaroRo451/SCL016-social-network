@@ -1,4 +1,4 @@
-import { entry } from '../lib/firebase.js';
+import { entry, homeG } from '../lib/firebase.js';
 // import { turnHash } from '../lib/index.js';
 
 export const home = () => {
@@ -14,9 +14,9 @@ export const home = () => {
     <section class="login">
         <input type="email" id="email" class="inputLogin" placeholder="Ingresa tu correo" />
         <input type="password" id="password" class="inputLogin" placeholder="Contraseña"/>
-        <a href="#/mainView" id="entry"><button class="entryBtn">Ingresar</button></a>
-        <a href="#/registrate" class="registBtn">Regístrate</a>
-        <a id="gBtn"><img src="img/google-logo.png"></a>    
+        <a href="#/mainView" id="entry"><button>Ingresar</button></a>
+        <a href="#/registrate"><button>Regístrate</button></a>
+        <a href="#/homeG" id="gBtn"><img src="img/google-logo.png"></a>    
     </section>
     `;
   divHome.innerHTML = viewHome;
@@ -27,6 +27,9 @@ export const home = () => {
     entry(email, password);
   });
 
-  // divHome.querySelector('#gBtn').addEventListener('click', homeG);
+  const gLog = divHome.querySelector('#gBtn');
+  gLog.addEventListener('click', () => {
+    homeG();
+  });
   return divHome;
 };

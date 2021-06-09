@@ -26,23 +26,16 @@ width: 13vw;
 row-gap: 10px;
 }
 
-.inputLogin {
+input {
 border-radius: 5px;
 height: 2.5vh;
 }
 
-.entryBtn {
+button {
 background-color:#ff3916;
 color: #fff;
 border-color: #FF9330;
 border-radius: 5px;
-}
-
-.registBtn {
-font-size: 1.5vw;
-text-decoration: none;
-outline: none;
-color: #000;
 }
 
 .newlogin {

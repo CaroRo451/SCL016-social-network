@@ -2,9 +2,7 @@
 // Inicio de sesión usuarios registrados
 
 export const entry = (email, password) => {
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
+  firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
       window.location.hash = '#/mainView';
     })
@@ -14,28 +12,41 @@ export const entry = (email, password) => {
     });
 };
 
-// Registro de usuarios nuevos
+/* Registro de usuarios nuevos
 
 export const homeReg = (email, password) =>
   firebase.auth().createUserWithEmailAndPassword(email, password);
+  */
 
 // Observador de estado de autenticación
-/*
-export const registUser = (callback) => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      callback('#/mainView');
-    } else {
-      callback('#/')
-    }
-  }); */
 
-/* Login con Google
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    window.location.hash = '#/';
+  } else {
+    window.location.hash = '#/mainView';
+  }
+});
+
+// Login con Google
 export const homeG = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
-}
+    .then((result) => {
+      const credential = result.credential;
+      const token = credential.accessToken;
+      const user = result.user;
+      window.location.hash = '#/mainView';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+};
 
+const db = firebase.firestore();
+/*
 Cerrar sesión
 export const signOut = () => {
   firebase.auth().signOut().then(() => {
