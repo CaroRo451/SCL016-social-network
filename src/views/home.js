@@ -12,10 +12,10 @@ export const home = () => {
     </nav>
     <h1>BIENVENIDOS</h1>
     <section class="login">
-        <input type="email" id="email" placeholder="Ingresa tu correo" />
-        <input type="password" id="password" placeholder="Contraseña"/>
+        <input type="email" id="email" class="inputLogin" placeholder="Ingresa tu correo" />
+        <input type="password" id="password" class="inputLogin" placeholder="Contraseña"/>
         <a href="#/mainView" id="entry"><button class="entryBtn">Ingresar</button></a>
-        <a href="#/registrate"><button>Regístrate</button></a>
+        <a href="#/registrate" class="registBtn">Regístrate</a>
         <a id="gBtn"><img src="img/google-logo.png"></a>    
     </section>
     `;

@@ -7,28 +7,42 @@ background-repeat: no-repeat;
 .logo {
 display: block;
 margin: auto;
-width: 35vw;
-height: 20vh;
+width: 30vw;
+height: 17vh;
 }
 
 h1{
+font-size: 2vw;
 text-align: center;
 }
 
 .login  {
 display: flex;
 margin: auto;
+font-size: 100%;
 flex-direction: column;
 text-align-last: center;
-width: 15vw;
+width: 13vw;
 row-gap: 10px;
 }
 
-.login > .google {
-cursor: pointer;
-align-self: center;
-width: 20%;
-height: 20%;
+.inputLogin {
+border-radius: 5px;
+height: 2.5vh;
+}
+
+.entryBtn {
+background-color:#ff3916;
+color: #fff;
+border-color: #FF9330;
+border-radius: 5px;
+}
+
+.registBtn {
+font-size: 1.5vw;
+text-decoration: none;
+outline: none;
+color: #000;
 }
 
 .newlogin {
@@ -38,4 +52,21 @@ flex-direction: column;
 text-align-last: center;
 width: 15vw;
 row-gap: 10px;
+}
+
+.newPost {
+display: flex;
+margin: auto;
+flex-direction: column;
+text-align-last: center;
+width: 15vw;
+row-gap: 10px;
+}
+
+.postBtn {
+background-color:#ff3916;
+color: #fff;
+border-color: #FF9330;
+border-radius: 5px;
+width: 5vw;
 }

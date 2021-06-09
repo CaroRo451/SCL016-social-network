@@ -1,8 +1,11 @@
 export const mainView = () => {
-  const navProfile = document.createElement('nav');
+  const navProfile = document.createElement('main');
   const viewProfile = `
           <img class="logo" src="img/logo.png">
-          <ul>Menu Hamb</ul>
+          <div class="newPost">
+          <textarea id="post" class="post" placeholder="Escribe Tu Receta"></textarea>
+          <button class="postBtn">Publicar</button>
+          </div>
   `;
   navProfile.innerHTML = viewProfile;
   return navProfile;

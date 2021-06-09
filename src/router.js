@@ -22,6 +22,10 @@ const showTemplate = (hash) => {
       containerRoot.innerHTML = '';
       containerRoot.appendChild(mainView());
       break;
+    case '#/userCreate':
+      containerRoot.innerHTML = '';
+      containerRoot.appendChild(mainView());
+      break;
     default:
       containerRoot.innerHTML = '';
       break;
