@@ -12,8 +12,8 @@ export const home = () => {
     </nav>
     <h1>BIENVENIDOS</h1>
     <section class="login">
-        <input type="email" id="email" class="inputLogin" placeholder="Ingresa tu correo" />
-        <input type="password" id="password" class="inputLogin" placeholder="Contraseña"/>
+        <input type="email" id="email" class="inputLogin" placeholder="Ingresa tu correo">
+        <input type="password" id="password" class="inputLogin" placeholder="Contraseña">
         <a href="#/mainView" id="entry"><button>Ingresar</button></a>
         <a href="#/registrate"><button>Regístrate</button></a>
         <a href="#/homeG" id="gBtn"><img src="img/google-logo.png"></a>    

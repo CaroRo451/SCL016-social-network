@@ -22,9 +22,9 @@ export const homeReg = (email, password) =>
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    window.location.hash = '#/';
-  } else {
     window.location.hash = '#/mainView';
+  } else {
+    window.location.hash = '#/';
   }
 });
 
@@ -41,11 +41,10 @@ export const homeG = () => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert(errorMessage);
+      alert(errorCode, errorMessage);
     });
 };
 
-const db = firebase.firestore();
 /*
 Cerrar sesión
 export const signOut = () => {
