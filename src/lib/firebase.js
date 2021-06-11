@@ -12,13 +12,32 @@ export const entry = (email, password) => {
     });
 };
 
-/* Registro de usuarios nuevos
-
-export const homeReg = (email, password) =>
-  firebase.auth().createUserWithEmailAndPassword(email, password);
-  */
-
-// Observador de estado de autenticación
+const db = firebase.firestore();
+export const create = (post) => db.collection('recipes').add({
+  post,
+});
+export const bringPost = () => {
+  db.collection('recipes').onSnapshot((querySnapshot) => {
+    const addPost = document.querySelector('#list');
+    addPost.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      data.id = doc.id;
+      addPost.innerHTML += /* html */ `
+        <div class="inputPost" id="postText">${doc.data().post}</div>
+        <button type="button" class="btnCrud" id="btnEdit" data-id='${data.id}'>Editar</button>
+        <button type="button" class="btnCrud" id="btnDelete" data-id='${data.id}'>Eliminar</button>
+      `;
+      const btnDelete = document.querySelectorAll('#btnDelete');
+      btnDelete.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          console.log('Borrado Correctamente');
+          deletePost(e.target.dataset.id);
+        });
+      });
+    });
+  });
+};
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -54,3 +73,11 @@ export const signOut = () => {
     // An error happened.
   });
 } */
+
+/* Registro de usuarios nuevos
+
+export const homeReg = (email, password) =>
+  firebase.auth().createUserWithEmailAndPassword(email, password);
+  */
+
+// Observador de estado de autenticación
