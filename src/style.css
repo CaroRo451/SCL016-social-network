@@ -1,84 +1,93 @@
 body {
-background: linear-gradient(158.75deg, rgba(255, 255, 255, 0.7) 39.06%, rgba(255, 252, 169, 0.5) 100%);
-/*background: -prefix-linear-gradient(left top, blue, white);*/
-background-repeat: no-repeat;
-}
-
-.logo {
-display: block;
-margin: auto;
-width: 30vw;
-height: 17vh;
-}
-
-h1{
-font-size: 2vw;
-text-align: center;
-}
-
-.login  {
-display: flex;
-margin: auto;
-font-size: 100%;
-flex-direction: column;
-text-align-last: center;
-width: 13vw;
-row-gap: 10px;
-}
-
-input {
-border-radius: 5px;
-height: 2.5vh;
-}
-
-button {
-background-color:#ff3916;
-color: #fff;
-border-color: #FF9330;
-border-radius: 5px;
-}
-
-.newlogin {
-display: flex;
-margin: auto;
-flex-direction: column;
-text-align-last: center;
-width: 15vw;
-row-gap: 10px;
-}
-
-#newPost {
-display: flex;
-margin: auto;
-flex-direction: column;
-text-align-last: center;
-width: 15vw;
-row-gap: 10px;
-}
-
-.post   {
-display: flex;
-margin: auto;
-flex-direction: column;
-text-align-last: center;
-}
-
-.content {
-margin-top: -10px;
-}
-
-.postBtn {
-background-color:#ff3916;
-color: #fff;
-border-color: #FF9330;
-border-radius: 5px;
-width: 5vw;
-}
-
-::placeholder {
-    text-align: justify;
-}
-.textPost {
-    text-align: justify;
-    height: 15vh;
-}
+    background: linear-gradient(158.75deg, rgba(255, 255, 255, 0.7) 39.06%, rgba(255, 252, 169, 0.5) 100%);
+    /*background: -prefix-linear-gradient(left top, blue, white);*/
+    background-repeat: no-repeat;
+    }
+    
+    .logo {
+    display: block;
+    margin: auto;
+    width: 30vw;
+    height: 17vh;
+    }
+    
+    h1{
+    font-size: 2vw;
+    text-align: center;
+    }
+    
+    .login  {
+    display: flex;
+    margin: auto;
+    font-size: 100%;
+    flex-direction: column;
+    text-align-last: center;
+    width: 13vw;
+    row-gap: 10px;
+    }
+    
+    input {
+    border-radius: 5px;
+    height: 2.5vh;
+    }
+    
+    button {
+    background-color:#ff3916;
+    color: #fff;
+    border-color: #FF9330;
+    border-radius: 5px;
+    }
+    
+    .addBtn {
+    display: flex;
+    margin: auto;
+    background-color:#ff3916;
+    color: #fff;
+    border-color: #FF9330;
+    border-radius: 5px;
+    }
+    
+    .newlogin {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    text-align-last: center;
+    width: 15vw;
+    row-gap: 10px;
+    }
+    
+    #newPost {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    text-align-last: center;
+    width: 15vw;
+    row-gap: 10px;
+    }
+    
+    .post   {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    text-align-last: center;
+    }
+    
+    .content {
+    margin-top: -10px;
+    }
+    
+    .postBtn {
+    background-color:#ff3916;
+    color: #fff;
+    border-color: #FF9330;
+    border-radius: 5px;
+    width: 5vw;
+    }
+    
+    ::placeholder {
+        text-align: justify;
+    }
+    .textPost {
+        text-align: justify;
+        height: 15vh;
+    }

@@ -1,6 +1,7 @@
-/* eslint-disable no-alert */
-// Inicio de sesión usuarios registrados
+import { addRecipe } from './index.js';
+import { changeView } from '../router.js';
 
+// Inicio sesión usuarios registrados
 export const entry = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
@@ -11,41 +12,6 @@ export const entry = (email, password) => {
       window.location.hash = '#/';
     });
 };
-
-const db = firebase.firestore();
-export const create = (post) => db.collection('recipes').add({
-  post,
-});
-export const bringPost = () => {
-  db.collection('recipes').onSnapshot((querySnapshot) => {
-    const addPost = document.querySelector('#list');
-    addPost.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      data.id = doc.id;
-      addPost.innerHTML += /* html */ `
-        <div class="inputPost" id="postText">${doc.data().post}</div>
-        <button type="button" class="btnCrud" id="btnEdit" data-id='${data.id}'>Editar</button>
-        <button type="button" class="btnCrud" id="btnDelete" data-id='${data.id}'>Eliminar</button>
-      `;
-      const btnDelete = document.querySelectorAll('#btnDelete');
-      btnDelete.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          console.log('Borrado Correctamente');
-          deletePost(e.target.dataset.id);
-        });
-      });
-    });
-  });
-};
-
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    window.location.hash = '#/mainView';
-  } else {
-    window.location.hash = '#/';
-  }
-});
 
 // Login con Google
 export const homeG = () => {
@@ -74,10 +40,69 @@ export const signOut = () => {
   });
 } */
 
+const db = firebase.firestore();
+
+export const showPost = () => {
+  db.collection('recipes').get()
+    .then((snapshot) => {
+      // console.log(snapshot.docs[0].data());
+      snapshot.forEach((doc) => {
+        // eslint-disable-next-line no-console
+        // console.log(doc.data());
+        addRecipe(doc.data(), doc.id);
+      });
+    })
+    .then(() => {
+      const btnDelete = document.querySelectorAll('.btnDelete');
+      btnDelete.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const id = btn.value;
+          db.collection('recipes').doc(id).delete().then(() => {
+            console.log('Document successfully deleted!');
+            changeView('#/mainView');
+          })
+            .catch((error) => {
+              console.error('Error removing document: ', error);
+            });
+        });
+      });
+    });
+};
+
+// Función para enviar post a Firebase
+export const sendPost = (titlePost, recipePost) => {
+  db.collection('recipes').add({
+    title: titlePost,
+    content: recipePost,
+  }).then(() => {
+    changeView('#/mainView');
+  });
+};
+
+/* export const bringPost = () => {
+  db.collection('recipes').onSnapshot((querySnapshot) => {
+    const addPost = document.querySelector('#list');
+    addPost.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      data.id = doc.id;
+      addPost.innerHTML += html  `
+        <div class="inputPost" id="postText">${doc.data().post}</div>
+        <button type="button" class="btnCrud" id="btnEdit" data-id='${data.id}'>Editar</button>
+        <button type="button" class="btnCrud" id="btnDelete" data-id='${data.id}'>Eliminar</button>
+      `; */
+
+// Observador de estado de autenticación
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    window.location.hash = '#/mainView';
+  } else {
+    window.location.hash = '#/';
+  }
+});
+
 /* Registro de usuarios nuevos
 
 export const homeReg = (email, password) =>
   firebase.auth().createUserWithEmailAndPassword(email, password);
   */
-
-// Observador de estado de autenticación

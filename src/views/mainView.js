@@ -1,4 +1,4 @@
-import { create, bringPost } from '../lib/firebase.js';
+import { showPost, sendPost } from '../lib/firebase.js';
 
 export const mainView = () => {
   const navProfile = document.createElement('main');
@@ -15,41 +15,20 @@ export const mainView = () => {
   `;
 
   navProfile.innerHTML = viewProfile;
-  const db = firebase.firestore();
-  const addRecipe = (recipe) => {
-    const list = document.getElementById('list');
-    const node = document.createElement('article');
-    node.innerHTML = `
-      <div class="post">
-      <h2>${recipe.title}</h2>
-      <p class="content">${recipe.content}</p>
-      </div>
-      `;
-    list.appendChild(node);
-  };
-  db.collection('recipes').get()
-    .then((snapshot) => {
-      // console.log(snapshot.docs[0].data());
-      snapshot.forEach((doc) => {
-        console.log(doc.data());
-        addRecipe(doc.data());
-      });
-    })
-    .catch((err) => console.log());
-  // Aquí tenemos que crear boton submit
+  showPost();
+
+  // Aquí creamos boton publicar
   const btnPublicar = navProfile.querySelector('.addBtn');
   btnPublicar.addEventListener('click', () => {
-    const post = navProfile.querySelector('#newPost').value;
-    console.log('Publicado Correctamente');
-    create(post).then((docRef) => {
-      console.log('Document written with ID: ', docRef.id);
-      document.getElementById('newPost').value = '';
-    })
-      .catch((error) => {
-        console.error('Error adding document: ', error);
-      });
+    const titlePost = document.getElementById('title').value;
+    const recipePost = document.getElementById('recipe').value;
+    if (titlePost === '' || recipePost === '') {
+      alert('Debes ingresar contenido');
+    } else {
+      sendPost(titlePost, recipePost);
+    }
   });
-  bringPost();
+
   return navProfile;
 };
 
